@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY GAME</title>
+    <link rel="stylesheet" href="pauseCube.css">
+    <link rel="stylesheet" href="gamepage.css">
+    <link rel="stylesheet" href="blocks.css">
+    
+</head>
+<body>
+
+<!-- **WARNING -->
+    <h2 class="title2">Bu çözünürlükte oyun çalışmaz!!<br>FATAL ERROR!!</h2>
+<!-- **WARNING -->
+
+<!-- **NAV AREA** -->
+    <nav>
+        <div class="infoRow">
+            <div class="info">
+                <div class="userName">
+                    <label for="userName">Oyuncu : </label>
+                    <input type="text" name="userName" id="gamer">
+                </div>
+            </div>
+            <div class="scoreBoard">
+                <div class="points">
+                    <label for="clickCounter">Seçilen Kart</label>
+                    <input class="scoreInput" type="text" name="clickCounter" id="clickCounter" disabled>
+                </div>
+                <div class="points">
+                    <label for="incorrect">Hatalı Seçim</label>
+                    <input class="scoreInput" type="text" name="incorrect" id="incorrect" disabled>
+                </div>
+                <div class="points">
+                    <label for="correct">Eşleşen Çift</label>
+                    <input class="scoreInput" type="text" name="correct" id="correct" disabled>
+                </div>
+                <div class="points">
+                    <label for="remainingCards">Kalan Kart</label>
+                    <input class="scoreInput" type="text" name="remainingCards" id="remaining" disabled>
+                </div>
+            </div>
+            <div class="timerArea">
+                <label for="countDownTimer">Süre : </label>
+                <input class="timerInput" type="text" name="countDownTimer" id="timer" disabled>
+            </div>
+        </div>
+        <div class="buttonRow">
+            <div class="gameProperty">
+                <div class="container">
+                    <label for="cardType">Kart Resmi Seçiniz : </label>
+                <select name="cardType" id="cardSelector">
+                    <option value="1" selected>Looney-Tunes</option>
+                    <option value="2">Efsane Futbolcular</option>
+                    <option value="3">Yeşilcam Karekterleri</option>
+                </select>
+                </div>
+                <div class="container">
+                    <label for="amountOfCards">Kart Sayısını Seçin : </label>
+                <select name="amountOfCards" id="quantitySelector">
+                    <option value="4" selected>8</option>
+                    <option value="5">10</option>
+                    <option value="6">12</option>
+                    <option value="7">14</option>
+                    <option value="8">16</option>
+                    <option value="9">18</option>
+                    <option value="10">20</option>
+                    <option value="11">22</option>
+                    <option value="12">24</option>
+                </select>
+                </div>
+            </div>
+            <div class="buttonArea">
+                <button class="commandButtons" id="distributer" onclick="distribute()">Kartları Dağıt</button>
+                <button class="commandButtons" id="gameStarter" onclick='startGame()'hidden>Oyuna Başla</button>
+                <button class="commandButtons" id="stoper" onclick="pauseTimer()">Durdur</button>
+                <button class="commandButtons" id="quit" onclick="quitGame()">Çıkış</button>
+            </div>
+        </div> 
+    </nav>
+<!-- **NAV AREA** -->
+
+<!-- **SECTION** -->
+
+    <section class="gameArea">
+        <div class="cardContainer" id="cardArea"></div>
+        <div class="pauseCube pauseCubeNone" id="pauseCube">
+            <div class="cube">
+                <div class="top"></div>
+                <div class="cubeEdges">
+                    <span style="--i:0">PAUSE...</span>
+                    <span style="--i:1">PAUSE...</span>
+                    <span style="--i:2">PAUSE...</span>
+                    <span style="--i:3">PAUSE...</span>
+                </div>
+                <div class="bottom"></div>
+            </div>
+         </div>   
+    </section>
+
+<!-- **SECTION** -->
+
+
+ <!-- **SCRIPTS** -->
+    <script src="cardImages.js"></script>
+    <script src="card.js"></script>
+    <script src="inputArea.js"></script>
+    <script src="countDownTimer.js"></script>
+    <script src="gamepageMain.js"></script>
+    <script src="game.js"></script>
+ <!-- **SCRIPTS** -->
+
+</body>
+</html>

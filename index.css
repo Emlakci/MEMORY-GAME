@@ -1,0 +1,172 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  background: #111;
+}
+body .title {
+  position: relative;
+  font-size: 6em;
+  white-space: nowrap;
+  color: #222;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 5% 0;
+  box-shadow: #222 10px 10px;
+}
+body .title::before {
+  content: attr(data-text);
+  position: absolute;
+  color: #fff;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #fff;
+  animation: animate 8s linear infinite;
+  filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 50px #fff);
+}
+@keyframes animate {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 540px) {
+  body .title::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 957px) {
+  body .title {
+    font-size: 4em;
+  }
+}
+@media screen and (max-width: 712px) {
+  body .title {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 540px) {
+  body .title {
+    display: none;
+  }
+}
+body .title2 {
+  display: none;
+  color: red;
+  text-align: center;
+  font-size: 25px;
+}
+@media screen and (max-width: 540px) {
+  body .title2 {
+    display: block;
+    filter: drop-shadow(10px 10px 10px red) drop-shadow(0 0 100px blue);
+  }
+}
+body .loadingBar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  font-size: 2rem;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 2%;
+  width: 70%;
+  box-shadow: #222 10px 10px;
+}
+body .loadingBar .bar {
+  color: #fff;
+  font-size: 1.3rem;
+  border: 1px solid blue;
+  margin-bottom: 5%;
+  text-align: end;
+  width: 0%;
+  background: linear-gradient(30deg, #999, #888, #777, #666, #555, #444, #333, #222, #111, #000);
+  filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 50px #fff);
+}
+body .loadingBar .buttonArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media screen and (max-width: 540px) {
+  body .loadingBar {
+    display: none;
+  }
+}
+body .loadingBar .nameInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #111;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  font-size: 1.3rem;
+  transition: 0.5s;
+}
+body .loadingBar .nameInput:valid, body .loadingBar .nameInput:focus {
+  border: 1px solid #00dfc4;
+}
+body .loadingBar .nameInput:valid ~ span, body .loadingBar .nameInput:focus ~ span {
+  color: #00dfc4;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.8rem;
+  padding: 0px 10px;
+  background: #111;
+  border-left: 2px solid #00dfc4;
+  border-right: 2px solid #00dfc4;
+  letter-spacing: 0.2em;
+}
+body .loadingBar .nameSpan {
+  position: absolute;
+  left: 2%;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+}
+body .begin {
+  background-color: rebeccapurple;
+  font-size: 2rem;
+  padding: 2% 4%;
+  cursor: pointer;
+  margin: 1% auto;
+  box-shadow: #222 5px 5px;
+}
+body .begin:hover {
+  color: rebeccapurple;
+  background-color: #000;
+  scale: 0.9;
+  box-shadow: none;
+}
+@media screen and (max-width: 957px) {
+  body .begin {
+    font-size: 3rem;
+    padding: 1% 3%;
+  }
+}
+@media screen and (max-width: 712px) {
+  body .begin {
+    font-size: 2rem;
+    padding: 0.5 2.5%;
+  }
+}
+body .error {
+  color: orangered;
+  font-size: 0.9rem;
+  margin-top: 2px;
+  margin-left: 2px;
+}/*# sourceMappingURL=index.css.map */

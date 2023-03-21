@@ -1,0 +1,436 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #111;
+    padding: 0px 5%;
+    label
+    {
+        display:flex;
+        width: fit-content;
+        color:#444;
+        padding: .2%;
+        margin-bottom: .5%;
+        font-size: 1rem;
+        // border: 1px solid red;
+        @media screen and (max-width:957px) {
+            font-size: .9rem;
+        }
+        @media screen and (max-width:712px) {
+            font-size: .75rem;
+        }
+    }
+    .quitProcess
+    {
+        width: 100%;
+        height: 100vh;
+        position:absolute;
+        z-index: 1000;
+        background: radial-gradient(circle,rgba(31,39,78,1) 19%, rgb(29, 28, 28,1) 89%);
+    }
+//* EROR TEXT APPEAR
+    .title2
+    {
+        position: relative;
+        margin: auto;
+        display: none;
+        color:red;
+        text-align: center;
+        font-size: 25px;
+        @media screen and (max-width:540px) {
+            display: block;
+            filter: drop-shadow(10px 10px 10px  red) drop-shadow(0 0 100px blue);
+        }
+    }
+//* NAVIGATION AREA
+    nav
+    {
+        display: flex;
+        flex-direction: column;
+        margin: 1% 0;
+        border:1px solid #222;
+        border-radius: 5px;
+        padding: .5%;
+        .infoRow
+        {
+            border:1px solid white;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: .1%;
+            .info
+            {
+                width: 15%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                border:1px solid blue;
+                padding: .1%;
+                #gamer
+                {
+                    width: 100%;
+                    outline: none;
+                    border-radius: 10px;
+                    font-size: 1.1rem;
+                    color:#fff;
+                    background: transparent;
+                    padding: 2px 15px;
+                    &:hover
+                    {
+                        border:1px solid #fff;
+                    }
+                    @media screen and (max-width:957px) {
+                        font-size: 1rem;
+                    }
+                    @media screen and (max-width:712px) {
+                        font-size: .9rem;
+                    }
+                }
+            }
+            .scoreBoard
+            {
+                border: 1px solid red;
+                width: 60%;
+                display: flex;
+                flex-direction: row;
+                justify-content:space-between;
+                padding: .2%;
+                label
+                {
+                    display:flex;
+                    width: fit-content;
+                    color:#444;
+                    padding: .2%;
+                    margin-bottom:.5%;
+                    font-size: 1rem;
+                    // border: 1px solid red;
+                    @media screen and (max-width:957px) {
+                        font-size: .9rem;
+                    }
+                    @media screen and (max-width:712px) {
+                        font-size: .8rem;
+                    }
+                }
+                .points
+                {
+                    border: 1px solid green;
+                    display: flex;
+                    flex-direction: column;
+                    padding: .2%;
+                    justify-content: center;
+                    align-items: center;
+                    .scoreInput
+                    {
+                        width: 50%;
+                        text-align:center;
+                        background: transparent;
+                        border-radius: 10px;
+                        padding: .2%;
+                        font-size: 1.1rem;
+                        color:#fff;
+                        @media screen and (max-width:957px) {
+                            font-size: 1rem;
+                        }
+                        @media screen and (max-width:712px) {
+                            font-size: .9rem;
+                        }
+                        &:not(#incorrect):hover
+                        {
+                            background: linear-gradient(30deg,blue,green,red);
+                        }
+                        &:not(#correct):hover
+                        {
+                            background: linear-gradient(30deg,red,yellow,purple);
+                            color:red;
+                        }
+                    }
+                }
+            }
+            .timerArea
+            {
+                border:1px solid yellow;
+                width: 20%;
+                max-width: 8rem;
+                display: flex;
+                flex-direction: column;
+                padding: .2%;
+                .timerInput
+                {
+                    width: 100%;
+                    text-align: center;
+                    background: transparent;
+                    border-radius: 10px;
+                    padding: 2px 0;
+                    font-size: 1.2rem;
+                    color:#333;
+                    @media screen and (max-width:957px) {
+                        font-size: 1.1rem;
+                    }
+                    @media screen and (max-width:712px) {
+                        font-size: 1rem;
+                    }
+                    &:hover
+                    {
+                        animation: animate .8s infinite;
+                        @keyframes animate {
+                            0%
+                            {
+                                color:#fff;
+                            }
+                            25%
+                            {
+                                color:#666;
+                            }
+                            50%
+                            {
+                                color:#444;
+                            }
+                            75%
+                            {
+                                color:#222;
+                            }
+                            100%
+                            {
+                                color:#111;
+                            }
+                        }
+                    }
+                }
+                .pause
+                {
+                    animation: blinkText 1s infinite;
+                    @keyframes blinkText 
+                    {
+                        0%
+                        {
+                            color:#000;
+                        }
+                       
+                        50%
+                        {
+                            color:#333;
+                        }
+                    }
+                }
+                .danger
+                {
+                    animation: danger 1s infinite;
+                    @keyframes danger 
+                    {
+                        0%
+                        {
+                            color:transparent;
+                        }  
+                        100%
+                        {
+                            color:darkred;
+                        }  
+                    }
+                }
+            }
+        }
+        .buttonRow
+        {
+            border:1px solid rebeccapurple;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            padding: .2% 0;
+            .gameProperty
+            {
+                border:1px solid yellow;
+                width:56%;
+                max-width: 450px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding:.2%;
+                .container
+                {
+                    border: 1px solid red;
+                    display: flex;
+                    width:100%;
+                    flex-direction: row;
+                    align-items: center;
+                    select
+                    {
+                        width:fit-content;
+                        border: 1px solid #444;
+                        background: transparent;
+                        text-align: center;
+                        font-size: 1.1rem;
+                        color:#fff;
+                        margin-left: 1%;
+                        padding: .3%;
+                        option
+                        {
+                            background: #111;
+                            color:#444;
+                            text-align: left;
+                        }
+                        @media screen and (max-width:957px) {
+                            font-size: 1rem;
+                        }
+                        @media screen and (max-width:712px) {
+                            font-size: .9rem;
+                        }
+                    }
+                }
+            }
+            .buttonArea
+            {
+                border:1px solid blue;
+                width: 55%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
+                padding:.2%;
+                .commandButtons
+                {
+                    background-color: rebeccapurple;
+                    font-size: 1.1rem;
+                    padding: .5% 1%;
+                    margin-bottom: .5%;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    &:hover
+                    {
+                        color:rebeccapurple;
+                        background-color: #000;
+                        scale: .9;
+                    }
+                    @media screen and (max-width:957px) {
+                        font-size: 1rem;
+                        padding: 1% 1.5%;
+                    }
+                    @media screen and (max-width:712px) {
+                        font-size: .9rem;
+                        padding: .5 2%;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:540px) {   
+            display: none;
+        }   
+    }
+//* SECTION
+    .gameArea
+    {
+        position: relative;
+        border: 1px solid #222;
+        border-radius: 5px;
+        padding: .5%;
+        min-height: 70vh;
+        .cardContainer
+        {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid purple;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            .card
+            {
+                background-image: url(./pics/backside.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 120px 170px;
+                width: 120px;
+                height: 170px;
+                border:1px solid #666;
+                border-radius: 5px;
+                margin: 5px;
+                filter: drop-shadow(0 0 10px darkblue) drop-shadow(0 0 25px grey);
+                @media screen and (max-width:957px) {
+                    font-size: 1rem;
+                    width: 110px;
+                    height: 155px;
+                    background-size: 110px 155px;
+                }
+                @media screen and (max-width:712px) {
+                    font-size: .8rem;
+                    width: 100px;
+                    height: 145px;
+                    background-size: 100px 145px;
+                }    
+            }
+            .pairedCard
+            {
+                background-image: #222;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 120px;
+                height: 170px;
+                border:1px solid #666;
+                border-radius: 5px;
+                margin: 5px;
+                @media screen and (max-width:957px) {
+                    font-size: 1rem;
+                    width: 110px;
+                    height: 155px;
+                }
+                @media screen and (max-width:712px) {
+                    font-size: .8rem;
+                    width: 100px;
+                    height: 145px;
+                }
+            }     
+        }
+        @media screen and (max-width:540px) {   
+            display: none;
+        }
+        .cardContainerPause
+        {
+            display: none !important;
+        }
+        .cardContainerWinnerTime
+        {
+            display: flex;
+            flex-wrap: wrap;
+            height: 70vh;
+            justify-content: center;
+            &::before
+            {
+                content: 'YOU WİN';
+                text-align: center;
+                font-size: 5rem;
+                color:green;
+            }          
+        }
+        .cardContainerLoseTime
+        {
+            height: 70vh;
+            justify-content: center;
+            &::before
+            {
+                content: 'YOU LOSE';
+                text-align: center;
+                font-size: 5rem;
+                color:red;
+            }
+        } 
+    }
+    @media screen and (max-width:957px) {
+        padding: 0px 1.2%;
+    }
+    @media screen and (max-width:712px) {
+        padding: 0px 1%;
+    }
+}

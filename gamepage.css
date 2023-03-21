@@ -1,0 +1,432 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #111;
+  padding: 0px 5%;
+}
+body label {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #444;
+  padding: 0.2%;
+  margin-bottom: 0.5%;
+  font-size: 1rem;
+}
+@media screen and (max-width: 957px) {
+  body label {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 712px) {
+  body label {
+    font-size: 0.75rem;
+  }
+}
+body .quitProcess {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 1000;
+  background: radial-gradient(circle, rgb(31, 39, 78) 19%, rgb(29, 28, 28) 89%);
+}
+body .title2 {
+  position: relative;
+  margin: auto;
+  display: none;
+  color: red;
+  text-align: center;
+  font-size: 25px;
+}
+@media screen and (max-width: 540px) {
+  body .title2 {
+    display: block;
+    filter: drop-shadow(10px 10px 10px red) drop-shadow(0 0 100px blue);
+  }
+}
+body nav {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0;
+  border: 1px solid #222;
+  border-radius: 5px;
+  padding: 0.5%;
+}
+body nav .infoRow {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.1%;
+}
+body nav .infoRow .info {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid blue;
+  padding: 0.1%;
+}
+body nav .infoRow .info #gamer {
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #fff;
+  background: transparent;
+  padding: 2px 15px;
+}
+body nav .infoRow .info #gamer:hover {
+  border: 1px solid #fff;
+}
+@media screen and (max-width: 957px) {
+  body nav .infoRow .info #gamer {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 712px) {
+  body nav .infoRow .info #gamer {
+    font-size: 0.9rem;
+  }
+}
+body nav .infoRow .scoreBoard {
+  border: 1px solid red;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.2%;
+}
+body nav .infoRow .scoreBoard label {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #444;
+  padding: 0.2%;
+  margin-bottom: 0.5%;
+  font-size: 1rem;
+}
+@media screen and (max-width: 957px) {
+  body nav .infoRow .scoreBoard label {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 712px) {
+  body nav .infoRow .scoreBoard label {
+    font-size: 0.8rem;
+  }
+}
+body nav .infoRow .scoreBoard .points {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  padding: 0.2%;
+  justify-content: center;
+  align-items: center;
+}
+body nav .infoRow .scoreBoard .points .scoreInput {
+  width: 50%;
+  text-align: center;
+  background: transparent;
+  border-radius: 10px;
+  padding: 0.2%;
+  font-size: 1.1rem;
+  color: #fff;
+}
+@media screen and (max-width: 957px) {
+  body nav .infoRow .scoreBoard .points .scoreInput {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 712px) {
+  body nav .infoRow .scoreBoard .points .scoreInput {
+    font-size: 0.9rem;
+  }
+}
+body nav .infoRow .scoreBoard .points .scoreInput:not(#incorrect):hover {
+  background: linear-gradient(30deg, blue, green, red);
+}
+body nav .infoRow .scoreBoard .points .scoreInput:not(#correct):hover {
+  background: linear-gradient(30deg, red, yellow, purple);
+  color: red;
+}
+body nav .infoRow .timerArea {
+  border: 1px solid yellow;
+  width: 20%;
+  max-width: 8rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.2%;
+}
+body nav .infoRow .timerArea .timerInput {
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border-radius: 10px;
+  padding: 2px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+@media screen and (max-width: 957px) {
+  body nav .infoRow .timerArea .timerInput {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 712px) {
+  body nav .infoRow .timerArea .timerInput {
+    font-size: 1rem;
+  }
+}
+body nav .infoRow .timerArea .timerInput:hover {
+  animation: animate 0.8s infinite;
+}
+@keyframes animate {
+  0% {
+    color: #fff;
+  }
+  25% {
+    color: #666;
+  }
+  50% {
+    color: #444;
+  }
+  75% {
+    color: #222;
+  }
+  100% {
+    color: #111;
+  }
+}
+body nav .infoRow .timerArea .pause {
+  animation: blinkText 1s infinite;
+}
+@keyframes blinkText {
+  0% {
+    color: #000;
+  }
+  50% {
+    color: #333;
+  }
+}
+body nav .infoRow .timerArea .danger {
+  animation: danger 1s infinite;
+}
+@keyframes danger {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: darkred;
+  }
+}
+body nav .buttonRow {
+  border: 1px solid rebeccapurple;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 0.2% 0;
+}
+body nav .buttonRow .gameProperty {
+  border: 1px solid yellow;
+  width: 56%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.2%;
+}
+body nav .buttonRow .gameProperty .container {
+  border: 1px solid red;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+body nav .buttonRow .gameProperty .container select {
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid #444;
+  background: transparent;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-left: 1%;
+  padding: 0.3%;
+}
+body nav .buttonRow .gameProperty .container select option {
+  background: #111;
+  color: #444;
+  text-align: left;
+}
+@media screen and (max-width: 957px) {
+  body nav .buttonRow .gameProperty .container select {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 712px) {
+  body nav .buttonRow .gameProperty .container select {
+    font-size: 0.9rem;
+  }
+}
+body nav .buttonRow .buttonArea {
+  border: 1px solid blue;
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.2%;
+}
+body nav .buttonRow .buttonArea .commandButtons {
+  background-color: rebeccapurple;
+  font-size: 1.1rem;
+  padding: 0.5% 1%;
+  margin-bottom: 0.5%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+body nav .buttonRow .buttonArea .commandButtons:hover {
+  color: rebeccapurple;
+  background-color: #000;
+  scale: 0.9;
+}
+@media screen and (max-width: 957px) {
+  body nav .buttonRow .buttonArea .commandButtons {
+    font-size: 1rem;
+    padding: 1% 1.5%;
+  }
+}
+@media screen and (max-width: 712px) {
+  body nav .buttonRow .buttonArea .commandButtons {
+    font-size: 0.9rem;
+    padding: 0.5 2%;
+  }
+}
+@media screen and (max-width: 540px) {
+  body nav {
+    display: none;
+  }
+}
+body .gameArea {
+  position: relative;
+  border: 1px solid #222;
+  border-radius: 5px;
+  padding: 0.5%;
+  min-height: 70vh;
+}
+body .gameArea .cardContainer {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid purple;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body .gameArea .cardContainer .card {
+  background-image: url(./pics/backside.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 120px 170px;
+  width: 120px;
+  height: 170px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  margin: 5px;
+  filter: drop-shadow(0 0 10px darkblue) drop-shadow(0 0 25px grey);
+}
+@media screen and (max-width: 957px) {
+  body .gameArea .cardContainer .card {
+    font-size: 1rem;
+    width: 110px;
+    height: 155px;
+    background-size: 110px 155px;
+  }
+}
+@media screen and (max-width: 712px) {
+  body .gameArea .cardContainer .card {
+    font-size: 0.8rem;
+    width: 100px;
+    height: 145px;
+    background-size: 100px 145px;
+  }
+}
+body .gameArea .cardContainer .pairedCard {
+  background-image: #222;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 120px;
+  height: 170px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  margin: 5px;
+}
+@media screen and (max-width: 957px) {
+  body .gameArea .cardContainer .pairedCard {
+    font-size: 1rem;
+    width: 110px;
+    height: 155px;
+  }
+}
+@media screen and (max-width: 712px) {
+  body .gameArea .cardContainer .pairedCard {
+    font-size: 0.8rem;
+    width: 100px;
+    height: 145px;
+  }
+}
+@media screen and (max-width: 540px) {
+  body .gameArea {
+    display: none;
+  }
+}
+body .gameArea .cardContainerPause {
+  display: none !important;
+}
+body .gameArea .cardContainerWinnerTime {
+  display: flex;
+  flex-wrap: wrap;
+  height: 70vh;
+  justify-content: center;
+}
+body .gameArea .cardContainerWinnerTime::before {
+  content: "YOU WİN";
+  text-align: center;
+  font-size: 5rem;
+  color: green;
+}
+body .gameArea .cardContainerLoseTime {
+  height: 70vh;
+  justify-content: center;
+}
+body .gameArea .cardContainerLoseTime::before {
+  content: "YOU LOSE";
+  text-align: center;
+  font-size: 5rem;
+  color: red;
+}
+@media screen and (max-width: 957px) {
+  body {
+    padding: 0px 1.2%;
+  }
+}
+@media screen and (max-width: 712px) {
+  body {
+    padding: 0px 1%;
+  }
+}/*# sourceMappingURL=gamepage.css.map */
